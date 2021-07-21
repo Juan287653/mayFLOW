@@ -1,7 +1,7 @@
-const TOKEN = "ODMwMDg1NTExNjkwNTg0MDc0.YHBjYA.h0azjQTXlKw7rWxmd1ywQk_eipI";
+const TOKEN = "ODY2MTQwMDMyMDkwNzY3Mzgx.YPONww.0uNZXshgByHRZLCOzqyUoWu7ExM";
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const PREFIX = ">";
+const PREFIX = "!";
 const fs = require("fs-extra");
 const ms = require("ms");
 
@@ -58,10 +58,10 @@ for (const file of commandFiles) {
 bot.on("error", console.error);
 
 let stats = {
-    serverID: '828796399696347146',
-    total: "830199811034054666",
-    member: "830199827206766602",
-    bots: "830199851693637682"
+    serverID: '865897204300775425',
+    total: "867230056279048252",
+    member: "867230106912555028",
+    bots: "867230120469069824"
 }
 
 bot.on('guildMemberAdd', member => {
@@ -328,13 +328,13 @@ bot.on("message", function(message) {
     
 	    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You do not have administrator;therefore, you will not be able to use this command.");
 	    let muteMember = message.mentions.members.first();
-	    if(!muteMember) return message.reply("No user was found, please try again {USAGE {?mute @member {time}}");
+	    if(!muteMember) return message.reply("No user was found, please try again {USAGE {!mute @member {time}}");
 	    if(muteMember.hasPermission("ADMINISTRATOR")) return message.reply("The user you have tried to mute is a administrator and cannot be muted.")
 	    let muteRole = message.guild.roles.cache.find(role => role.name === "Muted");
 	    if(!muteRole) return message.reply("The role named 'Muted' was undefined, Please create the role and try again.");
 	    let params =  message.content.split(" ").slice(1);
 	    let time = params[1];
-  	  if (!time) return message.reply(`***${message.content}***, Incorrect usage. Missing time {USAGE {?mute @member {time}}`);
+  	  if (!time) return message.reply(`***${message.content}***, Incorrect usage. Missing time {USAGE {!mute @member {time}}`);
 	
 	  muteMember.roles.add(muteRole.id);
   	message.channel.send(`Oh no, You have been muted for ${ms(ms(time), {long:true})} @${muteMember.user.tag}`);
