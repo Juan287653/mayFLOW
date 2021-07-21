@@ -1,7 +1,7 @@
 const TOKEN = "ODY2MTQwMDMyMDkwNzY3Mzgx.YPONww.0uNZXshgByHRZLCOzqyUoWu7ExM";
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const PREFIX = "?";
+const PREFIX = "!";
 const fs = require("fs-extra");
 const ms = require("ms");
 
